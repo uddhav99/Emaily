@@ -4,6 +4,7 @@ import { reduxForm, Field } from 'redux-form'; // very similar to connect functi
 import SurveyField from './SurveyField';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
+import validateEmails from '../../utils/validateEmails';
 
 const FIELDS = [
     { label: 'Survey Title', name: 'title' },
@@ -51,6 +52,8 @@ class SurveyForm extends Component {
 function validate(values) {
     const errors = {};
 
+    errors.emails = validateEmails(values.emails || '');
+    
     _.each(FIELDS, ({ name }) => {
         if (!values[name]) {
             errors[name] = 'You must provide a value';
@@ -61,6 +64,7 @@ function validate(values) {
 }
 // the names are essentially for the store 
 // now the redux store form component has a property called surveyTitle which has text in it
+// any custom prop added to the Field gets passed as props to the component - label gets passed to SurveyField
 
 export default reduxForm({
     validate: validate,
