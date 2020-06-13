@@ -5,19 +5,13 @@ import SurveyField from './SurveyField';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import validateEmails from '../../utils/validateEmails';
-
-const FIELDS = [
-    { label: 'Survey Title', name: 'title' },
-    { label: 'Subject Line', name: 'subject' },
-    { label: 'Email Body', name: 'body' },
-    { label: 'Recipient List', name: 'emails' }
-];
+import formFields from './formFields';
 
 class SurveyForm extends Component {
 
     renderFields() {
         return (
-            _.map(FIELDS, field => {
+            _.map(formFields, field => {
                 return (
                     <Field 
                         key={field.name} 
@@ -34,7 +28,7 @@ class SurveyForm extends Component {
     render () {
         return ( 
             <div>
-                <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+                <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
                     {this.renderFields()}
                     <Link to='/surveys' className="red btn-flat white-text">
                         Cancel
@@ -54,7 +48,7 @@ function validate(values) {
 
     errors.emails = validateEmails(values.emails || '');
     
-    _.each(FIELDS, ({ name }) => {
+    _.each(formFields, ({ name }) => {
         if (!values[name]) {
             errors[name] = 'You must provide a value';
         }
@@ -68,5 +62,11 @@ function validate(values) {
 
 export default reduxForm({
     validate: validate,
-    form: 'surveyForm'
-})(SurveyForm); // this passes in some props to this particular component
+    form: 'surveyForm', 
+    destroyOnUnmount: false
+})(SurveyForm); 
+
+// this passes in some props to this particular component which is specific to redux form
+// the form: surveyForm is redux form specific - passes stuff like handlesubmit to props 
+
+// survey form - 'surveyForm' is the name of the object which contains form data in the store 

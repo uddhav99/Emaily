@@ -11,3 +11,7 @@ export const handleToken = (token) => async (dispatch) => {
     dispatch({ type: FETCH_USER, payload: res.data }); // res.data is the user model 
     // we pass on the user model to the auth reducer 
 };
+
+export const submitSurvey =  values =>  {
+    return { type: 'submit_survey' }
+};

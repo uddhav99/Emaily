@@ -28,4 +28,5 @@ class App extends Component {
     }
 }
 
-export default connect(null, actions)(App);
+export default connect(null, actions)(App); 
+// figure out difference between mapstatetoprops and mapdispatchtostate 
