@@ -12,6 +12,9 @@ export const handleToken = (token) => async (dispatch) => {
     // we pass on the user model to the auth reducer 
 };
 
-export const submitSurvey =  values =>  {
-    return { type: 'submit_survey' }
+export const submitSurvey =  (values, history) => async (dispatch) => {
+    const res = await axios.post('/api/surveys', values);
+    history.push('/surveys');
+    dispatch({ type: FETCH_USER, payload: res.data});
+    // we get the user model back in res, then we pass it on to the reducer to update header values 
 };
