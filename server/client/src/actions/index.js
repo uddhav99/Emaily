@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER } from './types';
+import { FETCH_USER, FETCH_SURVEYS } from './types';
 
 export const fetchUser = () => async (dispatch) => {
     const res = await axios.get('/api/current_user');
@@ -18,3 +18,8 @@ export const submitSurvey =  (values, history) => async (dispatch) => {
     dispatch({ type: FETCH_USER, payload: res.data});
     // we get the user model back in res, then we pass it on to the reducer to update header values 
 };
+
+export const fetchSurveys = () => async (dispatch) => {
+    const res = await axios.get('/api/surveys');
+    dispatch({ type: FETCH_SURVEYS, payload: res.data }); // list of surveys user has made 
+}

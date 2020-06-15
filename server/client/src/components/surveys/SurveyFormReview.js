@@ -6,6 +6,9 @@ import formFields from './formFields';
 import * as actions from '../../actions';
 import { withRouter } from 'react-router-dom';
 
+
+// history is a part of withRouter
+// submitSurvey is an action creator
 const SurveyReview = ({ onCancel, formValues, submitSurvey, history }) => {
 
     const reviewFields = _.map(formFields, field => {
@@ -49,3 +52,4 @@ function mapStateToProps(state) {
 // formvalues properties determined by the 'name' in surveyForm
 
 export default connect(mapStateToProps, actions)(withRouter(SurveyReview));
+// withrouter = we need to give the action creater the freedom to change routes once the action is made

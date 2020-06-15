@@ -69,4 +69,6 @@ export default reduxForm({
 // this passes in some props to this particular component which is specific to redux form
 // the form: surveyForm is redux form specific - passes stuff like handlesubmit to props 
 
-// survey form - 'surveyForm' is the name of the object which contains form data in the store 
+// survey form - 'surveyForm' is the name of the object which contains form data in the store
+// could have named surveyForm anything else, but would have to change other stuff accordingly
+// like in surveyFormReview would have had to do state.form.x.values 
