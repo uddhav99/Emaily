@@ -1,5 +1,5 @@
 # Emaily
-Developed a web application that allows users to send custom surveys, track their responses using Webhooks, and analyze the feedback/response through visual dashboards
+ A web application that allows users to send custom surveys, track their responses using Webhooks, and analyze the feedback/response through visual dashboards
 
 ## Local Usage 
 The application currently works in development mode by simply booting up a Node.js server. After cloning the repository, follow these steps to get it running yourself -:
