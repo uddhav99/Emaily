@@ -31,7 +31,7 @@ After all the dependencies are installed and the API keys are added you can star
 $ npm run dev
 ```
 ## Production Usage
-https://evening-sierra-29078.herokuapp.com/
+https://evening-sierra-29079.herokuapp.com/
 
 ## Technologies
 - Front-end: React.js, redux, JavaScript, HTML5/CSS3
