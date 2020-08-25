@@ -31,7 +31,7 @@ module.exports = {
     googleClientID: '',
     googleClientSecret: '', 
     mongoURI: '',
-    cookieKey: 'wufehohweofoqhfkdhjbsfhkbhkhdbf', 
+    cookieKey: '' (can enter any random digits and letters here), 
     stripePublishableKey: '', 
     stripeSecretKey: '', 
     sendGridKey: '',
