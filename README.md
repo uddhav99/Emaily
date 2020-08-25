@@ -24,7 +24,19 @@ Once you install all the dependencies, you will have to do the following steps t
   - SendGrid API 
   - Google OAuth (Client and secret)
   - redirect domain
-
+```
+Example of a dev.js file structure
+```
+module.exports = {
+    googleClientID: '',
+    googleClientSecret: '', 
+    mongoURI: '',
+    cookieKey: 'wufehohweofoqhfkdhjbsfhkbhkhdbf', 
+    stripePublishableKey: '', 
+    stripeSecretKey: '', 
+    sendGridKey: '',
+    redirectDomain: 'http://localhost:3000'
+}
 ```
 After all the dependencies are installed and the API keys are added you can start the server
 ```
@@ -35,4 +47,5 @@ https://evening-sierra-29079.herokuapp.com/
 
 ## Technologies
 - Front-end: React.js, redux, JavaScript, HTML5/CSS3
-- Back-end: Node.js, Express.js, Passport.js, Google OAuth MongoDB
+- Back-end: Node.js, Express.js, Passport.js, Google OAuth, MongoDB
+- API's - Stripe API, SendGrid API, Google OAuth, MongoDb keys
